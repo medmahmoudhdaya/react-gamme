@@ -23,7 +23,7 @@ export default function App() {
         <div className="w-full mb-2 shadow mx-auto">
           <p className="text-xl text-blue-500 text-center py-2 font-bold">
             {words.filter(e=>e=='').length === 0 ? words[5] === solution ? "You are great !" : "The correct word was : "+solution
-            : ("you have" + words.filter(e=>e=='').length + "tries left.")}
+            : ("you have " + words.filter(e=>e=='').length + " tries left.")}
           </p>
         </div>
         <div className="mx-auto flex flex-col gap-1">
