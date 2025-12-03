@@ -107,6 +107,13 @@ export function Input({ words, setWords} :
             setWords(newWords)
             setUserWord('')
       }}>
+        <button 
+        onClick={( () => {
+          setUserWord('')
+          setWords((Array(6).fill('')))
+        })}
+        className="outline-none py-2 px-4 bg-green-500 rounded w-20 text-white"
+        type="reset">reset</button>
         <input 
         value={userWord}
         onChange={(e)=>{
@@ -118,7 +125,7 @@ export function Input({ words, setWords} :
          className="border border-blue-500 font-bold text-lg outline-none rounded p-2 flex-1" />
         <button
         type="submit" 
-        className="outline-none py-2 px-4 bg-blue-500 rounded">Try</button>
+        className="outline-none py-2 px-4 bg-blue-500 rounded w-20 text-white">Try</button>
        </form>
     </div>
   )
