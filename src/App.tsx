@@ -31,6 +31,7 @@ export default function App() {
         }
         </div>
 
+        <Input words={words} setWords={setWords}/>
       </Container>
   )
 }
@@ -79,3 +80,43 @@ export function Line({ word , solution }: { word: string;solution : string;}) {
 
 }
 
+export function Input({ words, setWords} : 
+  {
+  words : Array<string> ; 
+  setWords : Dispatch<SetStateAction<Array<string>>>;
+}){
+
+  const [userWord , setUserWord] = useState('')
+
+  return (
+    <div className="w-full mt-4 p-2 flex justify-start gap-1">
+      <form 
+      className="w-full flex gap-1"
+       onSubmit={(e) => {
+        e.preventDefault();
+            if (userWord.length != 5){
+              return
+            }
+
+            const index = words.findIndex((e) => e === '')
+            const newWords = [...words]
+            newWords[index] = userWord
+            setWords(newWords)
+            setUserWord('')
+      }}>
+        <input 
+        value={userWord}
+        onChange={(e)=>{
+          if(e.target.value.length <=5 ){
+            setUserWord(e.target.value)
+          }
+        }}
+        type="text"
+         className="border border-blue-500 font-bold text-lg outline-none rounded p-2" />
+        <button
+        type="submit" 
+        className="outline-none py-2 px-4 bg-blue-500 rounded">Try</button>
+       </form>
+    </div>
+  )
+}
