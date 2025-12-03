@@ -92,7 +92,7 @@ export function Input({ words, setWords} :
   const [userWord , setUserWord] = useState('')
 
   return (
-    <div className="w-full mx-auto mt-4 p-2 flex justify-start gap-1">
+    <div className="w-full mx-auto mt-4 p-2 flex justify-between gap-1">
       <form 
       className="w-full flex gap-1"
        onSubmit={(e) => {
@@ -122,7 +122,7 @@ export function Input({ words, setWords} :
           }
         }}
         type="text"
-         className="border border-blue-500 font-bold text-lg outline-none rounded p-2 flex-1" />
+         className="border border-blue-500 font-bold text-lg outline-none rounded p-2 w-full"/>
         <button
         type="submit" 
         className="outline-none py-2 px-4 bg-blue-500 rounded w-20 text-white">Try</button>
